@@ -81,6 +81,12 @@
       background: var(--rouge-clair); color: var(--rouge-fonce); font-size: 15px; max-width: 32em;
     }
     .ios .ios-note { display: block; }
+    #iphone { display: none; }
+    .ios #iphone { display: inline-flex; }
+    .ios #download, .ios .meta { display: none; }
+    .iphone-link { margin-top: 12px; font-size: 14px; color: var(--gris); }
+    .ios .iphone-link { display: none; }
+    .ios-note ol { margin: 8px 0 0 18px; }
 
     /* Maquette de téléphone */
     .phone {
@@ -187,7 +193,7 @@
   <div class="hero">
     <div class="wrap">
       <div>
-        <span class="eyebrow">Application interne · Android</span>
+        <span class="eyebrow">Application interne · Android &amp; iPhone</span>
         <h1>Vos congés, <em>simplement</em>, depuis votre téléphone.</h1>
         <p class="lead">Biopole Connect permet aux collaborateurs de Biopole de demander leurs congés, de suivre leurs soldes et d'être notifiés dès qu'une demande est validée.</p>
 
@@ -195,8 +201,21 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
           Télécharger pour Android
         </a>
+        <a class="btn" id="iphone" href="https://biopole.github.io/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+          Ouvrir la version iPhone
+        </a>
         <p class="meta" id="meta"></p>
-        <p class="ios-note">Vous êtes sur iPhone : Biopole Connect n'est pour l'instant disponible que sur Android. Rapprochez-vous du service RH.</p>
+        <p class="iphone-link">Vous avez un iPhone ? Ouvrez <a href="https://biopole.github.io/">biopole.github.io</a> dans Safari sur votre iPhone.</p>
+        <div class="ios-note">
+          <strong>Installer sur iPhone (Safari) :</strong>
+          <ol>
+            <li>Touchez « Ouvrir la version iPhone ».</li>
+            <li>Touchez le bouton <strong>Partager</strong> (carré avec une flèche).</li>
+            <li>Choisissez <strong>« Sur l'écran d'accueil »</strong>, puis « Ajouter ».</li>
+            <li>Ouvrez Biopole Connect depuis la nouvelle icône et touchez <strong>« Activer »</strong> pour les notifications (iOS 16.4 ou plus récent).</li>
+          </ol>
+        </div>
       </div>
 
       <div class="phone" aria-hidden="true">
@@ -277,7 +296,7 @@
       </details>
       <details>
         <summary>Et sur iPhone ?</summary>
-        <p>La version iPhone n'est pas encore disponible au téléchargement.</p>
+        <p>Ouvrez <a href="https://biopole.github.io/">biopole.github.io</a> dans Safari, touchez Partager puis « Sur l'écran d'accueil ». Biopole Connect s'ouvre alors comme une application, avec ses notifications (iOS 16.4 ou plus récent). Aucun téléchargement depuis l'App Store n'est nécessaire.</p>
       </details>
     </div>
   </section>
@@ -292,9 +311,9 @@
   <script>
     // ── Informations de la version publiée (à mettre à jour) ─────────────
     const APP = {
-      version: "1.0.0",
-      date: "2026-11-12",          // date de publication (AAAA-MM-JJ)
-      size: "",                     // ex. "22 Mo" (laisser vide si inconnu)
+     version: "1.1.0",
+date: "2026-11-13",
+size: "55 Mo",
       // "auto" : sur GitHub Pages, le bouton pointe vers l'APK de la dernière
       // Release GitHub du même dépôt (fichier nommé biopole-connect.apk).
       // Sinon : nom du fichier à côté de index.html, ou URL complète.
