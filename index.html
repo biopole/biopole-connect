@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biopole Connect — Télécharger l'application</title>
+  <meta name="description" content="Téléchargez Biopole Connect, l'application RH de Biopole pour Android.">
+  <meta name="theme-color" content="#B40C18">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23B40C18'/%3E%3Ctext x='32' y='46' font-family='Arial' font-weight='700' font-style='italic' font-size='40' fill='white' text-anchor='middle'%3Eb%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --rouge: #B40C18;
+      --rouge-fonce: #8A0912;
+      --rouge-clair: #FBEAEB;
+      --gris: #77787B;
+      --texte: #2B2B2D;
+      --texte-2: #5E5F62;
+      --bord: #E6E6E8;
+      --fond: #F6F6F7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--texte);
+      background: var(--fond);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--rouge); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* En-tête */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--bord);
+    }
+    header .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+    .brand img { height: 30px; display: block; }
+    .brand span {
+      font-size: 13px; font-weight: 600; letter-spacing: .32em; color: var(--gris);
+    }
+    header nav a {
+      font-size: 15px; font-weight: 600; text-decoration: none; color: var(--texte-2);
+      margin-left: 24px;
+    }
+    header nav a:hover { color: var(--rouge); }
+
+    /* Hero */
+    .hero { background: #fff; border-bottom: 1px solid var(--bord); overflow: hidden; }
+    .hero .wrap {
+      display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center;
+      padding-top: 72px; padding-bottom: 80px;
+    }
+    .eyebrow {
+      display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--rouge); background: var(--rouge-clair);
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(34px, 5vw, 52px); line-height: 1.08; letter-spacing: -.02em; margin-bottom: 18px; }
+    h1 em { font-style: normal; color: var(--rouge); }
+    .lead { font-size: 19px; color: var(--texte-2); max-width: 34em; margin-bottom: 32px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--rouge); color: #fff; text-decoration: none;
+      font-size: 17px; font-weight: 700; padding: 16px 26px; border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(180, 12, 24, .25);
+      transition: background .15s, transform .15s;
+    }
+    .btn:hover { background: var(--rouge-fonce); transform: translateY(-1px); }
+    .btn svg { width: 22px; height: 22px; flex: none; }
+    .meta { margin-top: 16px; font-size: 14px; color: var(--gris); }
+    .meta b { color: var(--texte-2); font-weight: 600; }
+    .ios-note {
+      display: none; margin-top: 20px; padding: 14px 16px; border-radius: 10px;
+      background: var(--rouge-clair); color: var(--rouge-fonce); font-size: 15px; max-width: 32em;
+    }
+    .ios .ios-note { display: block; }
+
+    /* Maquette de téléphone */
+    .phone {
+      justify-self: center; width: 260px; height: 520px; border-radius: 38px;
+      background: #1d1d1f; padding: 12px; box-shadow: 0 30px 60px rgba(0,0,0,.18);
+    }
+    .screen {
+      height: 100%; border-radius: 28px; background: var(--fond); overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .s-bar { background: var(--rouge); color: #fff; padding: 30px 16px 14px; font-weight: 700; font-size: 15px; }
+    .s-body { padding: 14px; display: grid; gap: 10px; }
+    .s-card { background: #fff; border-radius: 12px; padding: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+    .s-card small { display: block; font-size: 11px; color: var(--gris); }
+    .s-card strong { font-size: 20px; }
+    .s-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .s-line { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+    .pill { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; }
+    .p-ok { background: #E7F4E8; color: #2E7D32; }
+    .p-wait { background: #FFF3E0; color: #E65100; }
+    .s-fab {
+      margin-top: auto; margin: auto 14px 14px; background: var(--rouge); color: #fff;
+      text-align: center; font-size: 13px; font-weight: 700; padding: 11px; border-radius: 14px;
+    }
+    .s-nav { display: flex; justify-content: space-around; background: #fff; padding: 10px 0 14px; font-size: 10px; color: var(--gris); }
+    .s-nav .on { color: var(--rouge); font-weight: 700; }
+
+    /* Sections */
+    section { padding: 72px 0; }
+    h2 { font-size: 30px; line-height: 1.2; letter-spacing: -.01em; margin-bottom: 8px; }
+    .sub { color: var(--texte-2); margin-bottom: 36px; font-size: 17px; }
+
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feature { background: #fff; border: 1px solid var(--bord); border-radius: 16px; padding: 26px; }
+    .feature .ico {
+      width: 44px; height: 44px; border-radius: 12px; background: var(--rouge-clair); color: var(--rouge);
+      display: grid; place-items: center; margin-bottom: 16px;
+    }
+    .feature .ico svg { width: 22px; height: 22px; }
+    .feature h3 { font-size: 18px; margin-bottom: 6px; }
+    .feature p { color: var(--texte-2); font-size: 15px; }
+
+    .install { background: #fff; border-top: 1px solid var(--bord); border-bottom: 1px solid var(--bord); }
+    .steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+    .steps li { counter-increment: s; position: relative; padding-top: 56px; }
+    .steps li::before {
+      content: counter(s); position: absolute; top: 0; left: 0;
+      width: 40px; height: 40px; border-radius: 50%; background: var(--rouge); color: #fff;
+      display: grid; place-items: center; font-weight: 700;
+    }
+    .steps h3 { font-size: 17px; margin-bottom: 6px; }
+    .steps p { color: var(--texte-2); font-size: 15px; }
+    .callout {
+      margin-top: 36px; padding: 18px 20px; border-left: 4px solid var(--gris);
+      background: var(--fond); border-radius: 0 10px 10px 0; color: var(--texte-2); font-size: 15px;
+    }
+
+    .faq details { background: #fff; border: 1px solid var(--bord); border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; }
+    .faq summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; }
+    .faq summary::after { content: "+"; color: var(--rouge); font-size: 20px; line-height: 1; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq details p { margin-top: 10px; color: var(--texte-2); font-size: 15px; }
+
+    footer { padding: 32px 0; color: var(--gris); font-size: 14px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    @media (max-width: 860px) {
+      .hero .wrap { grid-template-columns: 1fr; padding-top: 48px; padding-bottom: 56px; }
+      .phone { display: none; }
+      .features { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      header nav { display: none; }
+    }
+    @media (max-width: 520px) {
+      .steps { grid-template-columns: 1fr; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    ════════════════════════════════════════════════════════════════
+    À METTRE À JOUR À CHAQUE NOUVELLE VERSION : le bloc APP ci-dessous
+    (en bas de page). Placez le fichier APK à côté de index.html sous
+    le nom indiqué dans "apk", ou mettez une URL complète
+    (ex. lien d'une Release GitHub).
+    ════════════════════════════════════════════════════════════════
+  -->
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#">
+        <img src="logo.png" alt="Biopole">
+        <span>CONNECT</span>
+      </a>
+      <nav>
+        <a href="#fonctions">Fonctionnalités</a>
+        <a href="#installation">Installation</a>
+        <a href="#aide">Aide</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Application interne · Android</span>
+        <h1>Vos congés, <em>simplement</em>, depuis votre téléphone.</h1>
+        <p class="lead">Biopole Connect permet aux collaborateurs de Biopole de demander leurs congés, de suivre leurs soldes et d'être notifiés dès qu'une demande est validée.</p>
+
+        <a class="btn" id="download" href="biopole-connect.apk" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Télécharger pour Android
+        </a>
+        <p class="meta" id="meta"></p>
+        <p class="ios-note">Vous êtes sur iPhone : Biopole Connect n'est pour l'instant disponible que sur Android. Rapprochez-vous du service RH.</p>
+      </div>
+
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="s-bar">Bonjour, Mohamed Ali</div>
+          <div class="s-body">
+            <div class="s-row">
+              <div class="s-card"><small>Congés payés</small><strong>20</strong> <small>jours restants</small></div>
+              <div class="s-card"><small>Maladie</small><strong>8</strong> <small>jours restants</small></div>
+            </div>
+            <div class="s-card">
+              <div class="s-line"><span>Congé payé · 4 j</span><span class="pill p-wait">En attente</span></div>
+            </div>
+            <div class="s-card">
+              <div class="s-line"><span>Exceptionnel · 1 j</span><span class="pill p-ok">Validée</span></div>
+            </div>
+          </div>
+          <div class="s-fab">+ Nouvelle demande</div>
+          <div class="s-nav"><span class="on">Accueil</span><span>Demandes</span><span>Profil</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="fonctions">
+    <div class="wrap">
+      <h2>Ce que vous pouvez faire</h2>
+      <p class="sub">Tout le suivi des absences, au même endroit, pour les collaborateurs comme pour la direction.</p>
+      <div class="features">
+        <div class="feature">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <h3>Demander un congé</h3>
+          <p>Congé payé, maladie, sans solde ou exceptionnel, à la journée ou à la demi-journée, avec une note si besoin.</p>
+        </div>
+        <div class="feature">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+          <h3>Être notifié</h3>
+          <p>La direction reçoit chaque nouvelle demande, et vous êtes prévenu dès qu'elle est validée ou refusée.</p>
+        </div>
+        <div class="feature">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Voir l'équipe</h3>
+          <p>Suivi des soldes en temps réel et calendrier des présences et absences pour la direction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="installation" class="install">
+    <div class="wrap">
+      <h2>Installer l'application</h2>
+      <p class="sub">L'application est distribuée directement par Biopole, en dehors du Play Store. L'installation prend une minute.</p>
+      <ol class="steps">
+        <li><h3>Téléchargez</h3><p>Ouvrez cette page sur votre téléphone Android et appuyez sur « Télécharger pour Android ».</p></li>
+        <li><h3>Ouvrez le fichier</h3><p>Une fois le téléchargement terminé, touchez la notification ou ouvrez le fichier depuis « Téléchargements ».</p></li>
+        <li><h3>Autorisez l'installation</h3><p>Si Android le demande, autorisez votre navigateur à « installer des applications inconnues », puis revenez en arrière.</p></li>
+        <li><h3>Connectez-vous</h3><p>Appuyez sur « Installer », ouvrez Biopole Connect et choisissez votre profil.</p></li>
+      </ol>
+      <p class="callout">Android peut afficher un avertissement car l'application ne vient pas du Play Store : c'est normal pour une application interne. Ne téléchargez Biopole Connect que depuis cette page.</p>
+    </div>
+  </section>
+
+  <section id="aide" class="faq">
+    <div class="wrap">
+      <h2>Questions fréquentes</h2>
+      <p class="sub">Un souci ? Les réponses aux questions les plus courantes.</p>
+      <details>
+        <summary>Quelle version d'Android faut-il ?</summary>
+        <p>Android 6.0 ou plus récent.</p>
+      </details>
+      <details>
+        <summary>Comment mettre à jour l'application ?</summary>
+        <p>Revenez sur cette page, téléchargez la dernière version et installez-la par-dessus l'ancienne : vos données sont conservées.</p>
+      </details>
+      <details>
+        <summary>L'installation est bloquée, que faire ?</summary>
+        <p>Dans les Paramètres d'Android, ouvrez « Applications » puis « Accès spéciaux » et « Installer des applications inconnues », et autorisez le navigateur que vous utilisez (Chrome par exemple).</p>
+      </details>
+      <details>
+        <summary>Et sur iPhone ?</summary>
+        <p>La version iPhone n'est pas encore disponible au téléchargement.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Biopole — Biopole Connect</span>
+      <span>Application à usage interne</span>
+    </div>
+  </footer>
+
+  <script>
+    // ── Informations de la version publiée (à mettre à jour) ─────────────
+    const APP = {
+      version: "1.0.0",
+      date: "2026-11-12",          // date de publication (AAAA-MM-JJ)
+      size: "",                     // ex. "22 Mo" (laisser vide si inconnu)
+      // "auto" : sur GitHub Pages, le bouton pointe vers l'APK de la dernière
+      // Release GitHub du même dépôt (fichier nommé biopole-connect.apk).
+      // Sinon : nom du fichier à côté de index.html, ou URL complète.
+      apk: "auto",
+    };
+
+    function apkUrl() {
+      if (APP.apk !== "auto") return APP.apk;
+      const user = location.hostname.match(/^([^.]+)\.github\.io$/);
+      const repo = location.pathname.split("/").filter(Boolean)[0];
+      if (user && repo) {
+        return "https://github.com/" + user[1] + "/" + repo +
+               "/releases/latest/download/biopole-connect.apk";
+      }
+      return "biopole-connect.apk";
+    }
+
+    const link = document.getElementById("download");
+    link.href = apkUrl();
+
+    const parts = ["Version <b>" + APP.version + "</b>"];
+    if (APP.date) {
+      const d = new Date(APP.date + "T12:00:00");
+      parts.push("publiée le " + d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" }));
+    }
+    if (APP.size) parts.push(APP.size);
+    parts.push("Android 6.0+");
+    document.getElementById("meta").innerHTML = parts.join(" · ");
+
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) document.body.classList.add("ios");
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
